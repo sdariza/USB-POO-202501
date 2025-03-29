@@ -22,7 +22,7 @@ public class Presentacion {
 
     public String obtenerHorario() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm");
-        return "Presentacion de: " + artista.getName() + "desde: " + horaInicio.format(formatter) + " hasta: "
+        return "Presentacion de: " + artista.getName() + " desde: " + horaInicio.format(formatter) + " hasta: "
                 + horaFin.format(formatter);
     }
 

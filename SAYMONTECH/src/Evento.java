@@ -59,7 +59,7 @@ public class Evento {
     }
 
     public Boleto generarBoleto(Usuario usuario) {
-        if (LocalDateTime.now().isBefore(fechaFinVentas) || LocalDateTime.now().isAfter(fechaFin)) {
+        if (LocalDateTime.now().isBefore(fechaInicioVentas) || LocalDateTime.now().isAfter(fechaFin)) {
             System.out.println("Fechas fuera del rango establecido");
             return null;
         }
@@ -73,6 +73,13 @@ public class Evento {
         boletosVendidos++;
         return boleto;
 
+    }
+
+    public String obtenerEstadisticas() {
+        return "Estadísticas del evento: " + nombre +
+                "\nBoletos vendidos: " + boletosVendidos +
+                "\nBoletos devueltos: " + boletosDevueltos +
+                "\nPersonas que asistieron: " + personasAsistentes;
     }
 
     public void agregarPresentacion(Presentacion presentacion) {

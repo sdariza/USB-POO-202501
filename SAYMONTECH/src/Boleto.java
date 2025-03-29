@@ -43,13 +43,13 @@ public class Boleto {
         if (!utilizado && !devuelto && LocalDateTime.now().isBefore(limiteEnDiasReembolso)) {
             this.devuelto = true;
             evento.incrementarBoletosDevueltos();
-            System.out.println("Reeembolso procesaso con exitosamente");
+            System.out.println("Reeembolso procesaso exitosamente");
             return true;
         }
         System.out.println("No es posible realizar el reembolso");
         return false;
     }
-    
+
     public String getCodigoUnico() {
         return codigoUnico;
     }
